@@ -1,0 +1,134 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(22, 22, 22);
+  font-family: "OpenSans";
+  color: rgb(247, 236, 192);
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+p {
+  margin: 0;
+}
+
+#container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+  #clockface, #clock, #dataContent, #errorContent, #textualContent, #status, #buffer, #oldBuffer {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0%;
+  }
+
+    #clock { z-index: 1; }
+    #clockface { z-index: 2; }
+    #dataContent, #errorContent, #textualContent { z-index: 3; }
+
+
+#dataContent {
+  bottom: 110px;
+  width: 500px;
+  height: 230px;
+  margin: 0 250px;
+}
+
+  #dateRow, #timeRow, #metaRow {
+    color: rgb(64, 125, 55);
+  }
+
+    #dateRow {
+      font-size: 3.5em;
+      line-height: 1.5em;
+      text-align: center;
+    }
+
+      #dow:after {
+        content: ", ";
+      }
+
+      #day:after, #month:after {
+        content: ".";
+      }
+
+      #year:before {
+        content: "20";
+      }
+
+    #timeRow {
+      font-size: 7em;
+      line-height: 0.7em;
+      text-align: center;
+    }
+
+      #hour:after {
+        content: ":";
+      }
+
+    #metaRow {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+      #metaRow span {
+        display: inline-block;
+        overflow: hidden;
+        width: 55px;
+        height: 24px;
+        background-color: rgb(64, 125, 55);
+        color: rgb(0, 0, 0);
+        padding: 5px 10px;
+        text-transform: uppercase;
+        opacity: 0.3;
+      }
+
+        #metaRow span.active {
+          opacity: 1;
+        }
+
+        #timezone, #leaps {
+          font-size: 0.7em;
+          line-height: 1.1em;
+        }
+
+#errorContent {
+  bottom: 110px;
+  width: 600px;
+  height: 100px;
+  margin: 0px 200px;
+  text-align: center;
+  font-size: 2.8em;
+  line-height: 1em;
+  opacity: 0.5;
+}
+
+#textualContent {
+  width: 780px;
+  height: 110px;
+  margin: 0 110px;
+}
+
+  #status, #buffer, #oldBuffer {
+    width: 100%;
+    overflow: hidden;
+  }
+
+    #status {
+      bottom: 70px;
+      text-align: center;
+    }
+
+    #buffer, #oldBuffer {
+      font-size: 1.4em;
+    }
+
+      #oldBuffer {
+        bottom: 35px;
+        color: rgb(64, 125, 55);
+      }
+
+      #buffer {
+        bottom: 5px;
+      }

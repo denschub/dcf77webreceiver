@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Zeitmaschine</title>
+
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/webfonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script type="text/javascript" src="/js/lib/buffer.js?201402060151"></script>
+  <script type="text/javascript" src="/js/lib/bufferstrip.js?201402060151"></script>
+  <script type="text/javascript" src="/js/lib/clock.js?201402060151"></script>
+  <script type="text/javascript" src="/js/lib/clockface.js?201402060151"></script>
+  <script type="text/javascript" src="/js/lib/result.js?201402060151"></script>
+  <script type="text/javascript" src="/js/lib/signal.js?201402060151"></script>
+  <script type="text/javascript" src="/js/lib/statusstrip.js?201402060151"></script>
+  <script type="text/javascript" src="/js/lib/utils.js?201402060151"></script>
+
+  <script type="text/javascript" src="/js/main.js?201402060151"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="errorContent">
+      <p id="error">Initializing...</p>
+    </div>
+    <div id="dataContent" style="display: none;">
+      <p id="dateRow">
+        <span id="dow">Mo</span><span id="day">88</span><span id="month">88</span><span id="year">88</span>
+      </p>
+      <p id="timeRow">
+        <span id="hour">88</span><span id="minute">88</span>
+      </p>
+      <p id="metaRow">
+        <span id="timezone">Timezone change</span>
+        <span id="cest">CEST</span>
+        <span id="cet">CET</span>
+        <span id="leaps">Leap second</span>
+      </p>
+    </div>
+    <div id="textualContent">
+      <p id="status">Initializing...</p>
+      <p id="oldBuffer">00011100100110000010111101011010001000100010010001110010001</p>
+      <p id="buffer">00011100100110000010111101011010001000100010010001110010001</p>
+    </div>
+    <canvas id="clock" width="1000" height="500"></canvas>
+    <canvas id="clockface" width="1000" height="500"></canvas>
+  </div>
+</body>
+</html>
