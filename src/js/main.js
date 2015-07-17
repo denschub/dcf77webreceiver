@@ -1,3 +1,6 @@
+//= require_self
+//= require_tree ./lib
+
 window.app = {
   settings: {
     colors: {
