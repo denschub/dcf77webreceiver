@@ -1,5 +1,7 @@
-//= require_self
-//= require_tree ./lib
+/**
+ *= require_self
+ *= require_tree ./lib
+ */
 
 window.app = {
   settings: {
