@@ -116,7 +116,7 @@ window.app = {
     this.newBuffer();
     this.oldBuffer = new Buffer();
 
-    this.socketio = io.connect('http://thehiddentimemachine.schub.io');
+    this.socketio = io.connect(SOCKETIO_ADDRESS);
     this.socketio.on('dcf77signal', this.buffer.receiveSignal.bind(this.buffer));
 
     // draw the clockface a half second after the object is initiated

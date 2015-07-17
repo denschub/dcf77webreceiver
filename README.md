@@ -37,9 +37,9 @@ instructions. If you want to use this source and you run into troubles, please
 open an issue and we will figure out what went wrong. However, some general
 hints:
 
-This is just a static HTML web app, no special application is needed. However,
-you have to change line 114 in `js/main.js` to match your environments setup.
-This should be the address Socket.io is listening at.
+This is just a static HTML web app, no special application is needed. Just set
+up your website to serve the files in `public/`. However, you have to change
+the `SOCKETIO_ADDRESS` in `index.html` to match your setup.
 
 A note about security and a disclaimer
 ======================================
