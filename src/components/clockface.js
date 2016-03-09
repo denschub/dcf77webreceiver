@@ -12,12 +12,12 @@ export default React.createClass({
     width: React.PropTypes.number.isRequired
   },
 
-  getMarkerSeries: function(name, count, lengthCalc, color, stroke) {
+  getMarkerSeries: function(name, count, length, color, stroke) {
     let markers = [], fraction = 180 / count;
     for (let i = 0; i <= count; i++) {
       markers.push(React.createElement(Marker, {
         color: color,
-        length: lengthCalc(i),
+        length: typeof length === "function" ? length(i) : length,
         planeHeight: this.props.height,
         planeWidth: this.props.width,
         strokeWidth: stroke,
@@ -33,7 +33,7 @@ export default React.createClass({
       "hour",
       24,
       (i) => {
-        return i % 2 == 0 ? 60 : 20;
+        return i % 2 === 0 ? 60 : 20;
       },
       "rgb(247, 236, 192)",
       2
@@ -44,9 +44,7 @@ export default React.createClass({
     return this.getMarkerSeries(
       "minute",
       60,
-      () => {
-        return 40;
-      },
+      40,
       "rgba(247, 236, 192, 0.5)",
       1
     );
