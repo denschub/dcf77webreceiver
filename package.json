@@ -1,0 +1,35 @@
+{
+  "name": "dcf77webreceiver-ui",
+  "version": "2.0.0",
+  "description": "The web client for dcf77webreceiver",
+  "author": "Dennis Schubert <mail@dennis-schubert.de>",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "normalize.css": "^3.0.3",
+    "react": "^0.14.7",
+    "react-addons-pure-render-mixin": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.6.5",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "build": "webpack -p",
+    "lint": "eslint src",
+    "start": "node devserver.js"
+  }
+}
