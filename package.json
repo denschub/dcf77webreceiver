@@ -28,7 +28,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "build": "webpack -p",
+    "build": "./node_modules/.bin/webpack --optimize-minimize",
     "lint": "eslint src",
     "start": "node devserver.js"
   }

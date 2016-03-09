@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = {
+var config = {
   context: __dirname + "/src",
   devtool: "source-map",
   entry: {
@@ -13,11 +13,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel?presets[]=react,presets[]=es2015",
+        loader: "babel?presets[]=react,presets[]=es2015"
       },
       {
         test: /\.html$/,
-        loader: "file?name=[name].[ext]",
+        loader: "file?name=[name].[ext]"
       },
       {
         test: /\.scss$/,
@@ -30,9 +30,27 @@ module.exports = {
   },
   output: {
     filename: "app.js",
-    path: __dirname + "/dist",
+    path: __dirname + "/dist"
   },
   plugins: [
     new ExtractTextPlugin("app.css")
   ]
 };
+
+if (process.argv.indexOf("--optimize-minimize") !== -1) {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      "process.env": {
+        "NODE_ENV": JSON.stringify("production")
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      comments: false,
+      compress: {
+        warnings: false
+      }
+    })
+  );
+}
+
+module.exports = config;
